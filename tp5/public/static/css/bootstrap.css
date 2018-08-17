@@ -1,0 +1,164 @@
+body div:first-child{
+	background-image: url('../image/bann4.jpg');
+	background-size: 100% 100%;
+	background-repeat: repeat-x;
+	height: 800px;
+	width: auto;
+}
+a h3{
+	margin-top: 10px;
+}
+h1{
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+.col-md-8 a{
+	color: #fff;
+}
+.swiper-details{
+	position: absolute;
+	height: 390px;
+	background-color: #ffffff1c;
+	bottom: 8%;
+	right: 5%;
+}
+.money1{
+	color:#FC8D4D;
+	font-weight: bold;
+	font-size: 49px;
+	letter-spacing: 6px;
+	margin-left: 30px;
+}
+.swiper-details p:nth-child(3){
+	color: #fff;
+	font-weight: bold;
+	font-size: 45px;
+	margin: 7px 30px;
+}
+.swiper-details p:nth-child(4){
+	color: #fff;
+	font-weight: bold;
+	font-size: 17px;
+	margin: 10px 30px;
+	letter-spacing: 1.2px;
+	line-height: 33px;
+}
+.vd{
+    text-align: center;
+    display: inline-block;
+    width: 181px;
+    height: 61px;
+    margin-left: 35px;
+    padding: 18px;
+    background-color: #ff691f;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+}
+#price{
+	padding: 11px;
+	width: 100%;
+}
+.sub{
+	background-color: #ff691f;
+	width: 100%;
+	color: #fff;
+	padding: 9px;
+
+}
+.fix{
+	position: fixed;
+    display: inline-block;
+    right: 130px;
+    bottom: 60px;
+    margin: 0px;
+    padding: 0px;
+}
+.wao{
+	color: #ff691f;
+	font-weight: bold;
+	font-size: 50px;
+	letter-spacing: 7px;
+	margin-bottom: 50px;
+}
+.ttw{
+    font-weight: bold;
+    line-height: 1.9;
+    letter-spacing: 1.5px;
+    font-size: 21px;	
+}
+.ttwp{
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 2px;
+    color: #908787;
+}
+.rm{
+	background-color: #e9642a;
+    padding: 15px 0;
+    color: #fff;
+    text-align: center;
+}
+.num span{
+	padding: 20px 0;
+	font-size: 40px;
+	color: #e9642a;
+	border-bottom: 2px solid #e9642a;
+}
+#h1{
+	text-align: center;
+	color: #e9642a;
+	margin: 100px;
+	font-size: 55px;
+}
+.blank1 {
+	background-color: #efefef38;
+	display: inline-block;
+	width: 25%;
+	border: 2px solid #6b656521;
+	margin-top: 30px;
+	margin-left: 55px;
+}
+.money {
+	font-weight: bold;
+	font-size: 36px;
+	color: #ff691f;
+	margin: 30px;
+}
+.content1 {
+	margin: 0;
+	padding: 40px;
+	color: #3a2d2d96;
+	font-size: 16px;
+}
+.title_1 {
+	font-weight: bold;
+	font-size: 24px;
+	margin: auto;
+}
+.num_money {
+	display: inline-block;
+	color: #ff691f;
+	font-weight: bold;
+	font-size: 50px;
+	margin-left: 35px;
+	letter-spacing: 7px;
+	margin-bottom: 10px;
+}
+.carousel-inner img{
+	border-radius: 50%;
+	width: 180px;
+	border: 12px solid #f7f7f4;
+}
+.swiper{
+	display: inline-block;
+}
+#name{
+	font-size: 25px;
+	color: #ff691f;
+	margin: 0;
+}
+#details{
+	margin: 0;
+	color: #4e3b3b91;
+}

@@ -18,3 +18,5 @@ Route::get('hello/:name', 'index/hello');
 return [
 
 ];
+
+// Route::get('/','frontend/index/index')->name('homepage');

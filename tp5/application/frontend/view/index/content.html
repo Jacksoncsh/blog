@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://fapiao.itdiffer.com/login -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title> 内容页 </title>
+  <!-- Bootstrap Core CSS -->
+  <link href="__STATIC__/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link href="__STATIC__/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="__STATIC__/css/blog.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">我的博客</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="./index.html">首页</a></li>
+          <li><a href="./list.html">文章列表</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./login.html">登录</a></li>
+          <li><a href="./registration.html">注册</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="./backstage_management.html"><i class="fa fa-dashboard fa-fw"></i> 管理后台</a></li>
+              <li><a href="./login.html"><i class="fa fa-sign-out fa-fw"></i> 安全退出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="visible-md visible-lg">
+          <div class="panel panel-custom">
+            <div class="panel-heading">相关文章</div>
+            <div class="list-group list-group-flush">
+              <a href="./content.html" class="list-group-item">如何防止服务器攻击</a>
+              <a href="./content.html" class="list-group-item">如何防止服务器攻击</a>
+              <a href="./content.html" class="list-group-item">如何防止服务器攻击</a>
+              <a href="./content.html" class="list-group-item">如何防止服务器攻击</a>
+              <a href="./content.html" class="list-group-item">如何防止服务器攻击</a>
+            </div>
+          </div>
+        </div>
+        <div class="visible-md visible-lg">
+          <div class="panel panel-custom">
+            <div class="panel-heading">博客分类</div>
+            <div class="list-group list-group-flush">
+              <a href="./list.html" class="list-group-item">生活随想<span class="badge">10</span></a>
+              <a href="./list.html" class="list-group-item">心灵鸡汤<span class="badge">3</span></a>
+              <a href="./list.html" class="list-group-item">php语言<span class="badge">13</span></a>
+              <a href="./list.html" class="list-group-item">mysql数据库<span class="badge">2</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <ol class="breadcrumb">
+          <li><a href="./index.html">首页</a></li>
+          <li><a href="./content_md.html">Spring 管理</a></li>
+          <li class="active">文章</li>
+        </ol>
+        <section class="content-wrap">
+          <header class="post-head">
+            <h1 class="post-title">如何防止服务器攻击</h1>
+            <span class="author">作者：<a href="./users.html"> 超级无敌大飞</a></span> •
+            <time class="post-date" datetime="2016-12-27 12:35:14.0" title="2016-12-27 12:35:14.0">2016年12月27日 星期二</time>
+            &nbsp;&nbsp;&nbsp;阅读 (6985)
+          </header>
+          <hr>
+          <section class="post-content">
+            <h3>前言</h3>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="\&quot;font-family:宋体\&quot;">如何防止服务器招受某些不良居心的人的攻击始终是一个重要话题，不管是企业服务器还是个人服务器，都应该注重这方面的保护措施。</span></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="\&quot;font-family:宋体\&quot;">相对来说，企业服务器会比较安全一些，因为他们拥有自己的服务器，能够个性化的定制安全策略，同时实时监控系统访问状况，以及激活备份数据库；而个人服务器则由于很大程度上为租用的云服务器，而且个人开发时需要远程连接服务器，因此一般都会将数据库密码设置的过于简单，数据库的用户操作权限设置不合理，服务器端口禁用不合理。如此总总，造成了个人服务器频繁遭受攻击，个人数据泄露，数据敲诈的情况。</span></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="\&quot;font-family:宋体\&quot;">本文将会从个人开发的应用、服务器登陆、防火墙、数据库权限管理、备份和端口配置等五个层面上讲述如何将自己的服务器打造成一个安全、不易被攻破、健壮性强的服务器。</span></p>
+            <h3>应用安全</h3>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="\&quot;font-family:宋体\&quot;">很多情况下的攻击都是针对开发的应用，例如</span>SQL<span style="\&quot;font-family:宋体\&quot;">注入攻击、脚本攻击。</span></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQL<span style="\&quot;font-family:宋体\&quot;">注入大家都不陌生，是一种常见的攻击方式，攻击者在界面的表单信息或</span>url<span style="\&quot;font-family:宋体\&quot;">上输入一些奇怪的</span>sql<span style="\&quot;font-family:宋体\&quot;">片段，例如“</span>or <span style="\&quot;font-family:宋体\&quot;">‘</span>1<span style="\&quot;font-family:宋体\&quot;">’</span>=<span style="\&quot;font-family:宋体\&quot;">’</span>1<span style="\&quot;font-family:宋体\&quot;">’”这样的语句，有可能入侵参数校验不足的应用程序。所以在我们的应用中需要做一些工作，来防备这样的攻击方式。在一些安全性很高的应用中，比如银行软件，经常使用将</span>sql<span style="\&quot;font-family:宋体\&quot;">语句全部替换为存储过程这样的方式，来防止</span>sql<span style="\&quot;font-family:宋体\&quot;">注入，这当然是一种很安全的方式，但我们平时开发中，可能不需要这种死板的方式。</span></p>
+          </section>
+          <hr>
+          <section class="post-content">
+            <div class="blog-copyright">
+              <span title="CDCN - 码上中国博客文章版权属于作者，受法律保护。未经作者同意不得转载。">©
+                著作权归作者所有</span>
+            </div>
+          </section>
+          <section class="post-content">
+            <b>分类</b>&nbsp;&nbsp;&nbsp;
+            <a href="./content_md.html"><span class="badge blue">Spring 管理</span></a>
+          </section>
+          <br>
+          <section class="post-content"> 
+            <b>标签</b>&nbsp;&nbsp;&nbsp;
+            <a href="./tag_list.html"><span class="badge blue">linux 中文乱码</span></a>&nbsp;&nbsp;
+            <a href="./tag_list.html"><span class="badge blue">centos 中文乱码</span></a>&nbsp;&nbsp;
+            <a href="./tag_list.html"><span class="badge blue">centos设置中文界面</span></a>&nbsp;&nbsp;
+          </section>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script></script>
+  <!-- jQuery -->
+  <script src="__STATIC__/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="__STATIC__/libs/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
