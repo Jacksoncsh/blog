@@ -12,9 +12,7 @@ Route::get('/backstage_management','frontend/index/backstage_management')->name(
 Route::get('/change_password','frontend/index/change_password')->name('change_password');
 Route::get('/classification_management','frontend/index/classification_management')->name('classification_management');
 Route::get('/label_management','frontend/index/label_management')->name('label_management');
-Route::get('/login','frontend/index/login')->name('login');
 Route::get('/person_information','frontend/index/person_information')->name('person_information');
-Route::get('/registration','frontend/index/registration')->name('registration');
 Route::get('/tag_list','frontend/index/tag_list')->name('tag_list');
 Route::get('/users','frontend/index/users')->name('users');
 Route::get('/content_md','frontend/index/content_md')->name('content_md');
