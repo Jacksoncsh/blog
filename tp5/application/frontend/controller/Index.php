@@ -1,12 +1,24 @@
 <?php
 namespace app\frontend\controller;
 
+use app\common\model\ArticleModel;
+use app\common\model\CategoryModel;
+use app\common\model\TagModel;
 use think\Controller;
 
 class Index extends Controller
 {
     public function index()
     {
+        $articles  = ArticleModel::order('id','desc')->limit(6)->select();
+
+        $tags      = TagModel::order('id','desc')->select();
+        
+        $categorys = CategoryModel::where('article_num','>',0)->order('id','desc')->select();
+
+        $this->assign('articles',$articles);
+        $this->assign('categorys',$categorys);
+        $this->assign('tags',$tags);
         return $this->fetch('index/index');
     }
     public function content()

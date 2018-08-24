@@ -8,9 +8,11 @@ $(function(){
 		var username = $.trim(input.val());
 		if (!pattern.test(username)) {
 			// 处理错误输出
+			remove_success(form_group);
 			append_error(form_group, '用户名不合法');
 		} else {
 			remove_error(form_group);
+			append_success(form_group);
 			is_user_exist();
 		}
 	}
@@ -23,9 +25,11 @@ $(function(){
 		var url = input.data('url') + '?username='+username;
 		$.get(url, function(res) {
 			if (res.data.exist) {
+				remove_success(form_group);
 				append_error(form_group, '用户名已存在');
 			} else {
 				remove_error(form_group);
+				append_success(form_group);
 			}
 		})
 	}
@@ -43,11 +47,15 @@ $(function(){
 		} else {
 			remove_error(form_group);
 			if (password!=repassword) {
+				remove_success(reform_group);
+				remove_success(reform_group);
 				append_error(form_group, '两次密码不一致');
 				append_error(reform_group, '两次密码不一致');
 			} else {
 				remove_error(form_group);
 				remove_error(reform_group);
+				append_success(form_group);
+				append_success(reform_group);
 			}
 		}		
 	}

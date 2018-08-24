@@ -1,7 +1,18 @@
 <?php
-
-Route::get('/index','frontend/index/index')->name('index');
 Route::get('/','frontend/index/index')->name('index');
+
+Route::get('/list$','frontend/article/article')->name('article_list');
+
+Route::get('/list/category$','frontend/article/category')->name('ajax_category_list');
+
+Route::get('/list/tag$','frontend/article/tag')->name('ajax_tag_list');
+
+Route::get('/list/:id/detail$','frontend/article/detail')
+			->pattern(['id'=>'\d+'])
+			->name('detail_list');
+
+
+
 Route::get('/content','frontend/index/content')->name('content');
 Route::get('/add_article','frontend/index/add_article')->name('add_article');
 Route::get('/add_category','frontend/index/add_category')->name('add_category');

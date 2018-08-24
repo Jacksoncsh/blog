@@ -19,7 +19,7 @@ class Login extends Controller
                 $username = $request->post('username','','trim');
                 $user = UserModel::where('username',$username)->find();
                 if (!$user) {
-                    $this->error('登录失败，用户不存在!');                
+                    $this->error('登录失败，用户不存在!','reg');                
                 }
                 //验证密码
                 $encryptpassword = encrypt($request->post('password'));

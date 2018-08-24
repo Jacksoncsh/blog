@@ -7,7 +7,7 @@
       <h1 class="page-header">
         文章列表
         <div class="pull-right">
-          <a class="btn btn-success btn-sm" href="./add_article.html">添加文章</a>
+          <a class="btn btn-success btn-sm" href="{:url('article_add')}">添加文章</a>
         </div>
       </h1>
     </div>
@@ -21,60 +21,37 @@
               <th>分类</th>
               <th>浏览量</th>
               <th>创建时间</th>
+              <th>修改时间</th>
               <th>操作</th>
             </tr>
           </thead>
           <tbody>
+            {foreach $articles as $key=>$article } 
+            {// assign name="category" value="$newCategories[$article->category_id]" /}
             <tr>
-              <th scope="row">1</th>
-              <td>最新国外六大免费PHP虚拟主机</td>
-              <td>php语言</td>
-              <td>12</td>
-              <td>2018-07-09 11:23:30</td>
+              <th scope="row">{$key+1}</th>
+              <td>{$article->title}</td>
+              <td>{$article->category->name}</td>
+              <td>{$article->view}</td>
+              <td>{$article->created_time}</td>
+              <td>{$article->updated_time}</td>
               <td>
                 <div class="btn-group">
-                  <a class="btn btn-default btn-sm" href="#">编辑</a>
-                  <a class="btn btn-danger btn-sm" href="#">删除</a>
+                  <a class="btn btn-default btn-sm" href="{:url('article_edit','id='.$article->id)}">编辑</a>
+                  <a class="btn btn-danger btn-sm btn-delete" href="{:url('article_delete','id='.$article->id)}">删除</a>
                 </div>
               </td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>最新国外六大免费PHP虚拟主机</td>
-              <td>php语言</td>
-              <td>12</td>
-              <td>2018-07-09 11:23:30</td>
-              <td>
-                <div class="btn-group">
-                  <a class="btn btn-default btn-sm" href="#">编辑</a>
-                  <a class="btn btn-danger btn-sm" href="#">删除</a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>最新国外六大免费PHP虚拟主机</td>
-              <td>php语言</td>
-              <td>12</td>
-              <td>2018-07-09 11:23:30</td>
-              <td>
-                <div class="btn-group">
-                  <a class="btn btn-default btn-sm" href="#">编辑</a>
-                  <a class="btn btn-danger btn-sm" href="#">删除</a>
-                </div>
-              </td>
-            </tr>
+          {/foreach}
           </tbody>
         </table>
       </div>
       <nav class="web-pagination text-center">
-        <ul class="pagination">
-          <li class="active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">下一页</a></li>
-          <li><a href="#">尾页</a></li>
-        </ul>
+        {$page|raw}
       </nav>
     </div>
   </div>
+{/block}
+{block name="customscript"}
+<script src="__STATIC__/js/backend/article_manage.js"></script>
 {/block}
