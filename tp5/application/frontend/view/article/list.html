@@ -7,8 +7,8 @@
       <div class="panel panel-custom">
         <div class="panel-heading">热门文章</div>
         <div class="list-group list-group-flush">
-          {foreach $articles as $key=>$article}
-          <a href="{:url('detail_list')}" class="list-group-item">{$article->title}</a>
+          {foreach $articles as $article}
+          <a href="{:url('detail_list','id='.$article->id)}" class="list-group-item">{$article->title}</a>
           {/foreach}
         </div>
       </div>
@@ -23,22 +23,7 @@
       <li class="active">{$currcategory->name}</li>
       {/if}
     </ol>
-    <div class="post-list list-group">
-      {foreach $articles as $article}
-      <div class="list-group-item">
-        <h4 class="list-group-item-heading">
-        <a href="{:url('detail_list','id='.$article->id)}">{$article->title}</a>
-        </h4>
-        <p>
-          <span class="label label-info"><b>{$article->updated_time}</b></span> &nbsp;&nbsp;&nbsp;阅读 <span class="badge">{$article->view}</span>
-        </p>
-        <p class="subtitle">
-          {$article->sub_title}
-        </p>
-      </div>
-      {/foreach}
-      <hr>
-    </div>
+    {include file="common/widget/article-detail"}
     <ul class="pagination">
       {$page|raw}
     </ul>

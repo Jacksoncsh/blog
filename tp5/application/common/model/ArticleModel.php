@@ -17,11 +17,16 @@ class ArticleModel extends Model
     {
         return $this->hasOne('CategoryModel', 'id', 'category_id');
     }
+
     public function user()
     {
         return $this->hasOne('UserModel', 'id', 'user_id');
     }
 
+    public function tag()
+    {
+        return $this->hasOne('TagModel', 'id', 'tag_id');
+    }
 	// 多对多关联
     public function tags()
     {

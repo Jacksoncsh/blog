@@ -7,6 +7,6 @@
         {:mb_substr($article->body, 0,100)}...
       </div>
     </a>
-    <p class="blog-meta"><a href="{:url('article')}">{$article->user->nickname}</a> {$article->created_time}分</p>
+    <p class="blog-meta"><a href="{:url('user_detail','id='.$article->user->id)}">{$article->user->nickname}</a> {$article->created_time}分</p>
   </div>
 </div>
