@@ -144,3 +144,9 @@ a:focus {
     color: #999;
     margin-bottom: 10px;
 }
+
+.article-title{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}

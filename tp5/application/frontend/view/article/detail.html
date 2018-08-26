@@ -1,18 +1,12 @@
 {extend name="common/base" /}
 {block name="title"}文章详情{/block}
+{block name="customstyle"}
+  <link href="__STATIC__/libs/editormd/css/editormd.min.css" rel="stylesheet">
+{/block}
 {block name="content"}
 	<div class="row">
 	      <div class="col-md-3">
-	        <div class="visible-md visible-lg">
-	          <div class="panel panel-custom">
-	            <div class="panel-heading">相关文章</div>
-	            <div class="list-group list-group-flush">
-	            	{foreach $articles as $articled}
-	              <a href="{:url('detail_list','id='.$articled->id)}" class="list-group-item">{$articled->title}</a>
-	            	{/foreach}
-	            </div>
-	          </div>
-	        </div>
+	 		 <div class="relation-article" data-url="{:url('ajax_relationArticles_list','id='.$article->id)}"></div>
 	 		 <div class="category-list" data-url="{:url('ajax_category_list')}"></div>
 	      </div>
 	      <div class="col-md-9">
@@ -30,7 +24,10 @@
 	          </header>
 	          <hr>
 	          <section class="post-content">
-	            {$article->body|nl2br|raw}
+	          	<div id="editormd-view">
+		             <textarea style="display:none;">{$article->body}
+		             </textarea> 
+	          	</div>
 	          </section>
 	          <hr>
 	          <section class="post-content">
@@ -58,4 +55,25 @@
 	<br>
 	<br>
 {/block}
-{block name="customscript"}{/block}
+{block name="customscript"}
+<script src="__STATIC__/libs/editormd/lib/marked.min.js"></script>
+  <script src="__STATIC__/libs/editormd/lib/prettify.min.js"></script>
+  <script src="__STATIC__/libs/editormd/lib/raphael.min.js"></script>
+  <script src="__STATIC__/libs/editormd/lib/underscore.min.js"></script>
+  <script src="__STATIC__/libs/editormd/lib/sequence-diagram.min.js"></script>
+  <script src="__STATIC__/libs/editormd/lib/flowchart.min.js"></script>
+  <script src="__STATIC__/libs/editormd/lib/jquery.flowchart.min.js"></script>
+  <script src="__STATIC__/libs/editormd/editormd.min.js"></script>
+ <script>
+    $(function(){
+        editormd.markdownToHTML("editormd-view", {
+          htmlDecode      : "style,script,iframe",  // you can filter tags decode
+          emoji           : true,
+          taskList        : true,
+          tex             : true,  // 默认不解析
+          flowChart       : true,  // 默认不解析
+          sequenceDiagram : true,  // 默认不解析
+        });
+    });
+  </script>
+{/block}

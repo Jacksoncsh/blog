@@ -7,6 +7,12 @@ Route::get('/list$','frontend/article/article')->name('article_list');
 Route::get('/list/category$','frontend/article/category')->name('ajax_category_list');
 //标签栏
 Route::get('/list/tag$','frontend/article/tag')->name('ajax_tag_list');
+//热门文章
+Route::get('/list/hotArticles$','frontend/article/hotArticles')->name('ajax_hotArticle_list');
+//相关文章
+Route::get('/list/:id/relationArticles$','frontend/article/relationArticles')
+			->pattern(['id'=>'\d+'])
+			->name('ajax_relationArticles_list');
 //内容详情
 Route::get('/list/:id/detail$','frontend/article/detail')
 			->pattern(['id'=>'\d+'])

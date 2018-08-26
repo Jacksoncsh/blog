@@ -9,6 +9,10 @@ use think\Controller;
 use think\Request;
 class Article extends Controller
 {
+	public function initialize()
+        {
+            $this->assign('nav', 'article');
+        }
 	public function article(Request $request)
 	{
 		$where = [];
@@ -17,8 +21,9 @@ class Article extends Controller
 		if ($category) {
 			$where['category_id'] = $category->id;
 		}
-		$articles = ArticleModel::where($where)->order('view','desc')->paginate(4);
+		$articles = ArticleModel::where($where)->order('id','desc')->paginate(4);
 		$page = $articles->render();
+
 		$this->assign('currcategory',$category);
 		$this->assign('articles',$articles);
 		$this->assign('page',$page);
@@ -45,15 +50,10 @@ class Article extends Controller
 		if (!$article) {
 			$this->error('文章不存在','index');
 		}
-		$tagIds = ArticleTagMapModel::where('article_id',$id)->column('tag_id');
-		$articleIds = ArticleTagMapModel::whereIn('tag_id',$tagIds)->distinct(true)->column('article_id');
-		$articles = ArticleModel::whereIn('id',$articleIds)->select();
-
 		$article->view +=1;
 		$article->save();
 
 		$this->assign('article',$article);
-		$this->assign('articles',$articles);
 		return $this->fetch('article/detail');
 	}
 	
@@ -66,7 +66,6 @@ class Article extends Controller
 		$articleIds = ArticleTagMapModel::where('tag_id',$id)->column('article_id');
 		$articles = ArticleModel::whereIn('id',$articleIds)->paginate(4);
 		$page = $articles->render();
-
 
 		$this->assign('page',$page);
 		$this->assign('articles',$articles);
@@ -88,5 +87,25 @@ class Article extends Controller
 		$this->assign('articles',$articles);
 		$this->assign('user',$user);
 		return $this->fetch('article/user');
+	}
+
+	public function hotArticles(Request $request)
+	{	
+		$hotArticles = ArticleModel::order('view','desc')->limit(6)->select();
+		$this->assign('hotArticles',$hotArticles);
+		return $this->fetch('article/ajax/hotArticles');
+	}
+	public function relationArticles(Request $request,$id)
+	{	
+		$article = ArticleModel::get($id);
+		if (!$article) {
+			$this->error('文章不存在','index');
+		}
+		$tagIds = ArticleTagMapModel::where('article_id',$id)->column('tag_id');
+		$articleIds = ArticleTagMapModel::whereIn('tag_id',$tagIds)->column('article_id');
+		$articles = ArticleModel::whereIn('id',$articleIds)->limit(6)->select();
+
+		$this->assign('articles',$articles);
+		return $this->fetch('article/ajax/relationArticles');
 	}
 }

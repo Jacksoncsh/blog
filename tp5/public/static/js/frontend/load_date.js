@@ -14,4 +14,14 @@ $(function(){
 			$('.detail-list').html(html)
 		})
 	}
+	if ($('.hot-article').length) {
+		$.get($('.hot-article').data('url'),function(html){
+			$('.hot-article').html(html)
+		})
+	}
+	if ($('.relation-article').length) {
+		$.get($('.relation-article').data('url'),function(html){
+			$('.relation-article').html(html)
+		})
+	}
 })

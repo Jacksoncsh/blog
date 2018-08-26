@@ -8,6 +8,10 @@ use think\Controller;
 
 class Index extends Controller
 {
+    public function initialize()
+        {
+            $this->assign('nav', 'index');
+        }
     public function index()
     {
         $articles  = ArticleModel::order('id','desc')->limit(6)->select();

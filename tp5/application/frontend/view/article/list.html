@@ -3,16 +3,7 @@
 {block name="content"}
 <div class="row">
   <div class="col-md-3">
-    <div class="visible-md visible-lg">
-      <div class="panel panel-custom">
-        <div class="panel-heading">热门文章</div>
-        <div class="list-group list-group-flush">
-          {foreach $articles as $article}
-          <a href="{:url('detail_list','id='.$article->id)}" class="list-group-item">{$article->title}</a>
-          {/foreach}
-        </div>
-      </div>
-    </div>
+    <div class="hot-article" data-url="{:url('ajax_hotArticle_list')}"></div>
     <div class="category-list" data-url="{:url('ajax_category_list')}"></div>
   </div>
   <div class="col-md-9">
