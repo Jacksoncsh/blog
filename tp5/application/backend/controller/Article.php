@@ -17,7 +17,7 @@ class Article extends Base
 	{
 		$currentUser = $this->getCurrentUser();
 		$articles = ArticleModel::where('user_id',$currentUser->id)
-					->order('id','asc')
+					->order('id','desc')
 					->paginate(5);
 		$page = $articles->render();
 		// 通过循环
